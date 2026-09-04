@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>🎂 Happy Birthday! 💝</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="background-glow"></div>
+<div id="stars"></div>
+<div id="petals"></div>
+<div id="floating-hearts"></div>
+<div id="click-effects"></div>
+
+
+<!-- =====================================================
+     PASSWORD
+===================================================== -->
+
+<section id="password-screen">
+
+    <div class="moon moon-one"></div>
+    <div class="moon moon-two"></div>
+
+    <div class="password-card">
+
+        <div class="card-shine"></div>
+
+        <div class="lock-circle">
+            🔐
+        </div>
+
+        <div class="small-title">
+            A LITTLE SURPRISE FOR YOU
+        </div>
+
+        <h2>
+            🔒 Enter the Secret Password to Unlock Your Surprise 💝
+        </h2>
+
+        <div class="ornament">
+            <span>✦</span>
+            <i></i>
+            <span>♡</span>
+            <i></i>
+            <span>✦</span>
+        </div>
+
+        <div class="password-dots">
+            <span id="dot1"></span>
+            <span id="dot2"></span>
+            <span id="dot3"></span>
+            <span id="dot4"></span>
+            <span id="dot5"></span>
+            <span id="dot6"></span>
+        </div>
+
+        <div class="keypad">
+
+            <button onclick="addDigit('1')">1</button>
+            <button onclick="addDigit('2')">2</button>
+            <button onclick="addDigit('3')">3</button>
+
+            <button onclick="addDigit('4')">4</button>
+            <button onclick="addDigit('5')">5</button>
+            <button onclick="addDigit('6')">6</button>
+
+            <button onclick="addDigit('7')">7</button>
+            <button onclick="addDigit('8')">8</button>
+            <button onclick="addDigit('9')">9</button>
+
+            <div></div>
+
+            <button onclick="addDigit('0')">0</button>
+
+            <button onclick="deleteDigit()">⌫</button>
+
+        </div>
+
+        <p id="error-message"></p>
+
+        <div class="made-with-love">
+            ♡ &nbsp; made with love &nbsp; ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DISCOVERY
+===================================================== -->
+
+<section id="discovery-screen" class="screen hidden">
+
+    <div class="discovery-stars"></div>
+
+    <div class="discovery-content">
+
+        <div class="floating-envelope">
+            💌
+        </div>
+
+        <div class="small-title">
+            ONE LITTLE SURPRISE
+        </div>
+
+        <h1>
+            Something Special<br>
+            Is Waiting For You
+        </h1>
+
+        <div class="ornament">
+            <span>✦</span>
+            <i></i>
+            <span>♡</span>
+            <i></i>
+            <span>✦</span>
+        </div>
+
+        <p class="discovery-text">
+            Take a deep breath...
+        </p>
+
+        <button class="continue-button" onclick="goToBirthday()">
+            Open My Surprise ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BIRTHDAY / CAKE
+===================================================== -->
+
+<section id="main-page" class="screen hidden">
+
+    <div class="curtain curtain-left"></div>
+    <div class="curtain curtain-right"></div>
+
+    <div class="balloons">
+        <span class="balloon b1">♡</span>
+        <span class="balloon b2">♡</span>
+        <span class="balloon b3">♡</span>
+        <span class="balloon b4">♡</span>
+        <span class="balloon b5">♡</span>
+    </div>
+
+    <div class="birthday-content">
+
+        <div class="top-label">
+            TODAY IS ALL ABOUT YOU
+        </div>
+
+        <h1>
+            🎂 Happy Birthday & Happy 47 Months of Love! 🎂
+        </h1>
+
+        <div class="title-decoration">
+            <span></span>
+            ✦ ♡ ✦
+            <span></span>
+        </div>
+
+        <div class="cake-area">
+
+            <div class="wish-label" id="wish-label">
+                ✨ Make a Wish! ✨
+            </div>
+
+            <div class="cake-glow"></div>
+
+            <div class="cake">
+
+                <div class="plate"></div>
+
+                <div class="cake-layer bottom-layer">
+                    <div class="frosting"></div>
+                    <div class="drips"></div>
+                    <div class="sprinkles"></div>
+                </div>
+
+                <div class="cake-layer middle-layer">
+                    <div class="frosting"></div>
+                    <div class="drips"></div>
+                    <div class="sprinkles"></div>
+                </div>
+
+                <div class="cake-layer top-layer">
+                    <div class="frosting"></div>
+                    <div class="drips"></div>
+                    <div class="sprinkles"></div>
+                </div>
+
+                <div class="cake-flower flower-left">🌸</div>
+                <div class="cake-flower flower-right">🌸</div>
+
+                <div class="candle candle-left">
+                    <div class="candle-body"></div>
+                    <div class="flame" id="flame1"></div>
+                    <div class="smoke" id="smoke1"></div>
+                </div>
+
+                <div class="candle candle-center">
+                    <div class="candle-body"></div>
+                    <div class="flame" id="flame2"></div>
+                    <div class="smoke" id="smoke2"></div>
+                </div>
+
+                <div class="candle candle-right">
+                    <div class="candle-body"></div>
+                    <div class="flame" id="flame3"></div>
+                    <div class="smoke" id="smoke3"></div>
+                </div>
+
+                <div class="cake-heart">
+                    ♡
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="blow-instruction">
+            <span>✦</span>
+            Make your wish, then blow the candles
+            <span>✦</span>
+        </p>
+
+        <div class="button-row">
+
+            <button id="blow-btn"
+                    class="main-button"
+                    onclick="blowCandles()">
+                🌬️ Blow the Candles!
+            </button>
+
+            <button id="letter-btn"
+                    class="main-button gold hidden"
+                    onclick="openLetterIntro()">
+                💌 Open Letter
+            </button>
+
+        </div>
+
+        <div class="memory-link">
+
+            <button onclick="openMemories()">
+
+                <span>📸</span>
+
+                <div>
+                    <small>A LITTLE MORE</small>
+                    <strong>See Our Memories</strong>
+                </div>
+
+                <b>→</b>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LETTER INTRO
+===================================================== -->
+
+<section id="letter-intro" class="screen hidden">
+
+    <div class="envelope-scene">
+
+        <div class="envelope-shadow"></div>
+
+        <div class="envelope">
+
+            <div class="envelope-back"></div>
+
+            <div class="envelope-flap"></div>
+
+            <div class="envelope-letter"></div>
+
+            <div class="wax-seal">
+                💌
+            </div>
+
+        </div>
+
+        <div class="envelope-message">
+            A letter, written just for you...
+        </div>
+
+        <button class="continue-button"
+                onclick="openLetter()">
+            Open Letter 💗
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     LETTER
+===================================================== -->
+
+<section id="letter-page" class="screen hidden">
+
+    <div class="letter-wrapper">
+
+        <button class="back-button"
+                onclick="backToBirthday()">
+            ← Back
+        </button>
+
+        <div class="letter-label">
+            FOR THE ONE WHO HOLDS MY HEART
+        </div>
+
+        <div class="letter-paper">
+
+            <div class="paper-border"></div>
+
+            <div class="paper-flower flower-a">🌸</div>
+            <div class="paper-flower flower-b">🌷</div>
+            <div class="paper-flower flower-c">🌸</div>
+
+            <div class="wax-seal letter-seal">
+                💌
+            </div>
+
+            <div class="letter-decoration">
+                ✦ ♡ ✦
+            </div>
+
+            <h2>
+                A Letter For You
+            </h2>
+
+            <div class="letter-divider">
+                ✦ ✦ ✦
+            </div>
+
+            <div class="letter-text">
+
+                <p>
+                    To the man who holds my heart,
+                </p>
+
+                <p>
+                    Happy Birthday, my love! 🎂💕 And happiest 47th month of being together, 47 months of choosing each other, growing together, and loving each other through every high and low. It feels like it's just yesterday, yet also like I've known you my whole life.
+                </p>
+
+                <p>
+                    We first met back in Grade 11 as classmates. Everything started with school works and playing Mobile Legends, you'd always invite me to play, and that was how we began talking, little by little. Then came on December 17, 2022, the day I went to church, honestly, i only go to church because I knew you'd be there. 💗 And you, being the sweet gentleman you are, offered to take me home. That same night, at exactly 11:21 PM, we started chatting… and that was it.
+                    That was the moment everything changed. We entered our talking stage, and my heart started beating a little faster, just for you.
+                </p>
+
+                <p>
+                    Then on December 23, out there in the quiet bukid, under the stars and open sky, you looked at me and said those words I'll never forget. "Let's make this official." ✨ And just like that, we became US.
+                </p>
+
+                <p>
+                    Since then, my favorite days have always been the ones spent with you. I love our simple, perfect moments, cuddling, sharing good food together, watching movies side by side, and traveling to new places hand in hand. It doesn't matter where we go or what we do, as long as I'm with you, I'm happy. Every moment feels like an adventure, and every quiet moment feels like home.
+                </p>
+
+                <p>
+                    I fell for everything about you. Your eyes that I could get lost in forever, your hair, your voice that calms me instantly… your whole self, your body, your heart, your soul. I love every single part of you. I fell for your kindness, your handsome smile, and the gentle way you treat me. You are everything I ever dreamed of, wrapped in one amazing person.
+                </p>
+
+                <p>
+                    You didn't just become my boyfriend, you changed all of me. You shaped my heart, softened my edges, and made me the version of myself that I am today. You became my safe place, the one I run to when the world feels too heavy, the one person who makes everything feel okay just by being there. You are my peace, my comfort, and my greatest blessing.
+                </p>
+
+                <p>
+                    I know we don't always get it right. We fight, we argue, and sometimes we even say things we don't mean, words that hurt, and sometimes even the word "breakup" slips out in anger. But what makes us special is this, we always talk it out. No matter how hard things get, we choose to understand, to forgive, and to stay. We fix what's broken, we hold each other closer, and everything becomes alright again. That's how I know what we have is real, and it's forever.
+                </p>
+
+                <p>
+                    And so, on your birthday and our 47th month together, this is my promise to you. I want to be with you not just today, not just for another month or year, but for all the years ahead. I want a future filled with more cuddles, more shared meals, more movies, more travels, more laughter, and even more love. I want to keep growing with you, learning with you, and loving you through every season of life.
+                </p>
+
+                <p>
+                    Happy Birthday, my love. Thank you for 47 beautiful months. Thank you for choosing me. Thank you for being my safe place. Here's to us, today, tomorrow, and always. 🥂💍
+                </p>
+
+            </div>
+
+            <div class="letter-decoration bottom">
+                ✦ ♡ ✦
+            </div>
+
+            <div class="signature">
+                With all my love, ❤️<br>
+                Always yours
+            </div>
+
+        </div>
+
+        <button class="continue-letter"
+                onclick="openMemories()">
+            Continue to our memories
+            <span>↓</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMORY INTRO
+===================================================== -->
+
+<section id="memory-intro" class="screen hidden">
+
+    <div class="scrapbook-intro">
+
+        <div class="scrapbook-book">
+
+            <div class="book-page left-page">
+                <span>♡</span>
+            </div>
+
+            <div class="book-page right-page">
+                <span>✦</span>
+            </div>
+
+        </div>
+
+        <div class="small-title">
+            TURNING THE PAGE
+        </div>
+
+        <h1>
+            Our Story<br>
+            In Little Moments
+        </h1>
+
+        <div class="ornament">
+            <span>✦</span>
+            <i></i>
+            <span>♡</span>
+            <i></i>
+            <span>✦</span>
+        </div>
+
+        <button class="continue-button"
+                onclick="showMemories()">
+            Open Our Memories 📸
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MEMORIES
+===================================================== -->
+
+<section id="memories-page" class="screen hidden">
+
+    <div class="memory-background"></div>
+
+    <!-- NEW BACK BUTTON -->
+    <button class="memory-back-button"
+            onclick="backToLetter()">
+        ← Back
+    </button>
+
+    <div class="memories-header">
+
+        <div class="top-label">
+            LITTLE MOMENTS, BIG MEMORIES
+        </div>
+
+        <h1>
+            💕 Our Beautiful Memories 💕
+        </h1>
+
+        <p>
+            Every moment with you is my favorite memory
+        </p>
+
+        <div class="title-decoration">
+            <span></span>
+            ✦ ♡ ✦
+            <span></span>
+        </div>
+
+    </div>
+
+
+    <div class="photo-grid">
+
+        <div class="memory-card"
+             onclick="openPhoto(0)">
+
+            <div class="tape"></div>
+
+            <div class="photo-container">
+
+                <img src="photo1.jpg"
+                     alt="Our memory">
+
+                <div class="photo-hover">
+                    <span>♡</span>
+                    VIEW MEMORY
+                </div>
+
+            </div>
+
+            <div class="caption">
+                <span>01</span>
+                <p>My favorite day with you 💗</p>
+            </div>
+
+        </div>
+
+
+        <div class="memory-card"
+             onclick="openPhoto(1)">
+
+            <div class="tape"></div>
+
+            <div class="photo-container">
+
+                <img src="photo2.jpg"
+                     alt="Our memory">
+
+                <div class="photo-hover">
+                    <span>♡</span>
+                    VIEW MEMORY
+                </div>
+
+            </div>
+
+            <div class="caption">
+                <span>02</span>
+                <p>Always smiling with you 😊</p>
+            </div>
+
+        </div>
+
+
+        <div class="memory-card"
+             onclick="openPhoto(2)">
+
+            <div class="tape"></div>
+
+            <div class="photo-container">
+
+                <img src="photo3.jpg"
+                     alt="Our memory">
+
+                <div class="photo-hover">
+                    <span>♡</span>
+                    VIEW MEMORY
+                </div>
+
+            </div>
+
+            <div class="caption">
+                <span>03</span>
+                <p>Adventures together ✨</p>
+            </div>
+
+        </div>
+
+
+        <div class="memory-card"
+             onclick="openPhoto(3)">
+
+            <div class="tape"></div>
+
+            <div class="photo-container">
+
+                <img src="photo4.jpg"
+                     alt="Our memory">
+
+                <div class="photo-hover">
+                    <span>♡</span>
+                    VIEW MEMORY
+                </div>
+
+            </div>
+
+            <div class="caption">
+                <span>04</span>
+                <p>Forever grateful for you 💖</p>
+            </div>
+
+        </div>
+
+
+        <div class="memory-card"
+             onclick="openPhoto(4)">
+
+            <div class="tape"></div>
+
+            <div class="photo-container">
+
+                <img src="photo5.jpg"
+                     alt="Our memory">
+
+                <div class="photo-hover">
+                    <span>♡</span>
+                    VIEW MEMORY
+                </div>
+
+            </div>
+
+            <div class="caption">
+                <span>05</span>
+                <p>Beautiful moments 🌸</p>
+            </div>
+
+        </div>
+
+
+        <div class="memory-card"
+             onclick="openPhoto(5)">
+
+            <div class="tape"></div>
+
+            <div class="photo-container">
+
+                <img src="photo6.jpg"
+                     alt="Our memory">
+
+                <div class="photo-hover">
+                    <span>♡</span>
+                    VIEW MEMORY
+                </div>
+
+            </div>
+
+            <div class="caption">
+                <span>06</span>
+                <p>Just us 💕</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TIMELINE -->
+
+    <div class="timeline">
+
+        <div class="timeline-title">
+            <span>✦</span>
+            OUR LITTLE JOURNEY
+            <span>✦</span>
+        </div>
+
+        <div class="timeline-line">
+
+            <div class="timeline-item">
+                <div class="timeline-dot">♡</div>
+                <small>2022</small>
+                <strong>We Met</strong>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">♡</div>
+                <small>DEC 17</small>
+                <strong>First Chat</strong>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">♡</div>
+                <small>DEC 23</small>
+                <strong>US</strong>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">♡</div>
+                <small>47 MONTHS</small>
+                <strong>Still Us</strong>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot">∞</div>
+                <small>FOREVER</small>
+                <strong>Always</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="closing">
+
+        <div class="closing-flower">
+            🌸
+        </div>
+
+        <div class="closing-heart">
+            ♡
+        </div>
+
+        <div class="closing-message">
+            Thank you for being you. Here's to many more memories together! 🎁
+        </div>
+
+        <div class="closing-stars">
+            ✦ &nbsp; ✦ &nbsp; ✦
+        </div>
+
+        <button class="final-button"
+                onclick="finalCelebration()">
+            One More Surprise ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PHOTO VIEWER
+===================================================== -->
+
+<div id="photo-modal">
+
+    <button class="modal-close"
+            onclick="closePhoto()">
+        ×
+    </button>
+
+    <button class="modal-prev"
+            onclick="previousPhoto()">
+        ‹
+    </button>
+
+    <div class="modal-box">
+
+        <div class="modal-photo">
+            <img id="modal-image"
+                 src=""
+                 alt="Memory">
+        </div>
+
+        <div id="modal-caption"></div>
+
+        <small id="modal-counter"></small>
+
+    </div>
+
+    <button class="modal-next"
+            onclick="nextPhoto()">
+        ›
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     FINAL CELEBRATION
+===================================================== -->
+
+<div id="final-screen">
+
+    <div id="fireworks"></div>
+
+    <div class="final-content">
+
+        <div class="final-heart">
+            💗
+        </div>
+
+        <div class="small-title">
+            AND THIS ISN'T THE END
+        </div>
+
+        <h1>
+            Forever & Always
+        </h1>
+
+        <div class="final-ornament">
+            ✦ ♡ ✦
+        </div>
+
+        <p>
+            ✨ Here's to many more memories together! ✨
+        </p>
+
+        <button onclick="closeFinal()">
+            Keep Our Memories ♡
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
