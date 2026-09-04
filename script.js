@@ -499,8 +499,6 @@ function blowCandles() {
 
     createConfetti();
 
-    createConfetti();
-
     createExplosion();
 
     setTimeout(() => {
@@ -793,6 +791,42 @@ function createHeartExplosion() {
         setTimeout(() => {
             heart.remove();
         }, 2000);
+    }
+}
+
+function createExplosion() {
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight * 0.45;
+    const symbols = ["✦", "♡", "✨", "💫", "•"];
+
+    for (let i = 0; i < 40; i++) {
+        const burst = document.createElement("div");
+        burst.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        burst.style.position = "fixed";
+        burst.style.left = centerX + "px";
+        burst.style.top = centerY + "px";
+        burst.style.zIndex = "600";
+        burst.style.color = "#ff5d9e";
+        burst.style.fontSize = Math.random() * 15 + 10 + "px";
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = Math.random() * 180 + 50;
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+
+        burst.animate(
+            [
+                { transform: "translate(-50%,-50%) scale(.2)", opacity: 1 },
+                { transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1.2)`, opacity: 0 }
+            ],
+            {
+                duration: 900 + Math.random() * 500,
+                easing: "cubic-bezier(.2,.8,.2,1)"
+            }
+        );
+
+        document.body.appendChild(burst);
+        setTimeout(() => burst.remove(), 1500);
     }
 }
 
@@ -1330,7 +1364,3 @@ function createConfetti() {
     setTimeout(() => confetti.remove(), 5000);
   }
 }
-
-// 🚀 Start balloons on page load ONLY
-window.addEventListener("DOMContentLoaded", createBalloons);
-
